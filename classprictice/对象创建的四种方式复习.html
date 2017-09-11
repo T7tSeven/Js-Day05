@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//对象字面量
+		// var obj={
+		// 	name:'鹿晗',
+		// 	age:27,
+		// 	sex:true,
+		// 	like:'footerboll',
+		// 	skill:function(){
+		// 		console.log(this.name+"是一个歌手");
+		// 	}
+		// }
+		// console.log(obj);
+		// obj.skill();
+
+	//new Object()
+		// var obj=new Object();
+		// 	obj.name='鹿晗';
+		// 	obj.age=27;
+		// 	obj.sex=true;
+		// 	obj.skill=function(){
+		// 		console.log(this.name+'是一个歌手');
+		// 	}
+		
+		// console.log(obj);
+		// obj.skill();
+
+	//工厂模式
+		// function objj(name,age,like){
+		// 	var obj=new Object();
+		// 	obj.name=name;
+		// 	obj.age=age;
+		// 	obj.like=like;
+		// 	obj.skill=function(){
+		// 		console.log(this.name+'是一个歌手');
+		// 	}
+		// 	return obj;
+		// }
+		// console.log(objj('鹿晗',27,'footerball'));
+
+	//自定义函数
+		function obj(name,age,like){
+			this.name=name;
+			this.age=age;
+			this.like=like;
+			this.skill=function(){
+				console.log(this.name+'是一个歌手');
+			}
+		}
+		var lu = new obj('鹿晗',27,"aa");
+		console.log(lu);
+
+
+	</script>
+</body>
+</html>

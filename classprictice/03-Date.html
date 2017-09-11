@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.空构造函数-----获取当前时间
+        // var now = new Date();
+        // console.log(now);       
+        // console.log(now.valueOf());//获取距1970-1-1相差的毫秒数
+
+        //2.构造函数中传入 毫秒值
+        // var now = new Date(1505115197664);
+        // console.log(now);
+
+        //3.传入数字
+        // var now=new Date(1995,5,29);
+        // console.log(now);
+
+        //4.传入日期格式
+        // var now=new Date('1990-4-20 8:8:8');
+        // console.log(now);
+
+        //获取当前日期的毫秒值
+        // var d = Date.now();//html5 浏览器不兼容
+        // console.log(d);
+
+
+        //Date 的获取指定时间方法
+        // var now=new Date();
+        // console.log(now.getFullYear());
+        // console.log(now.getMonth()+1);
+        // console.log(now.getDate());
+        // console.log(now.getDay());
+        // console.log(now.getHours());
+        // console.log(now.getMinutes());
+        // console.log(now.getSeconds());
+
+
+        //案例：
+        // 写一个函数，格式化日期对象，返回yyyy-MM-dd HH:mm:ss的形式
+        // var date='123';
+        // console.log(date instanceof Date);
+        function upDate(date) {
+            if (!date instanceof Date) {
+                console.log('输入有误，不是日期');
+            }
+            var year = date.getFullYear(),
+                month = date.getMonth() + 1,
+                day = date.getDate(),
+                hour = date.getHours(),
+                minute = date.getMinutes(),
+                second = date.getSeconds();
+
+            month = month < 10 ? '0' + month : month;
+            day = day < 10 ? '0' + day : day;
+            hour = hour < 10 ? '0' + hour : hour;
+            minute = minute < 10 ? '0' + minute : minute;
+            second = second < 10 ? '0' + second : second;
+
+            return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+        }
+        var date = new Date();
+        console.log(upDate(date));
+
+        //计算时间差，返回相差的天/时/分/秒
+        //1. 计算时间差
+        //2. 返回多值
+        //3. 计算转换天/时/分/秒
+        function turnDate(str, end) {
+            var sub = (str - end) / 1000;   //计算相差毫秒数 转换为秒数
+            var day = Math.round(sub / 60 / 60 / 24),     //计算天数
+                hour = Math.round(sub / 60 / 60 % 24),
+                minute = Math.round(sub / 60 % 60),
+                second = Math.round(sub % 60);
+            return {
+                day: day,
+                hour: hour,
+                minute: minute,
+                second: second
+            }
+        }
+        var str = new Date();
+        var end = new Date('2015-5-1');   //与'2015-5-1'(865)的最后结果不相同2015,5,1(834)
+        console.log(turnDate(str, end));
+    </script>
+</body>
+
+</html>

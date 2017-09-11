@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 下面代码输出的结果
+        // function Person(name, age, salary) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.salary = salary;
+        // }//构造函数
+        // function f1(person) {
+        //     person.name = "ls";
+        //     person = new Person("aa", 18, 10);//ls 18 10
+        // }//函数
+        // var p = new Person("zs", 18, 1000);//p=0x0011(zs 18 1000)
+        // console.log(p.name);
+        // f1(p);
+        // console.log(p.name);
+
+        //1. 
+        // var num1 = 10;//20 10
+        // var num2 = num1;
+        // num1 = 20;
+        // console.log(num1);
+        // console.log(num2);
+
+        //2. 
+        // var num = 50;
+        // function f1(num) {
+        //     num = 60;
+        //     console.log(num);//局部变量
+        // }
+        // f1(num);
+        // console.log(num);//全局变量
+
+        //3. 
+        var num1 = 55;
+        var num2 = 66;
+        function f1(num, num1) {
+            num = 100;//局部
+            num1 = 100;//局部
+            num2 = 100;//全局
+            console.log(num);
+            console.log(num1);
+            console.log(num2);
+        }
+
+        f1(num1, num2);//100 100
+        console.log(num1);//全局55
+        console.log(num2);//100
+        console.log(num);//报错没定义
+    </script>
+</body>
+
+</html>

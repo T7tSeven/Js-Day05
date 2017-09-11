@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math.PI						// 圆周率
+        // Math.abs()					// 绝对值
+        // Math.max() / Math.min()		// 求最大和最小值
+        // Math.sin() / Math.cos()		// 正弦/余弦
+        // Math.power() / Math.sqrt()	// 求指数次幂/求平方根
+
+        // Math.round()				// 取整，四舍五入
+        console.log(Math.round(7.1));
+
+        //// Math.random()				// 生成介于 0 和 1 之间的随机数(不能等于1)
+        console.log(Math.random());
+
+        // Math.floor() / Math.ceil()	// 向下取整/向上取整
+        console.log(Math.floor(2.7));
+        console.log(Math.ceil(2.7));
+        console.log(Math.floor(Math.random() * 7));//取0 到7之间的随机整数
+
+
+
+
+        //案例：
+        //1. 求10-20之间的随机整数包含[10,20]
+        console.log(Math.floor(Math.random() * 11 + 10));
+        //2. 随机生成颜色RGB[0,255]
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        function getRGB(min, max) {
+            var color1 = random(min, max);
+            var color2 = random(min, max);
+            var color3 = random(min, max);
+            return 'rgb(' + color1 + ',' + color2 + ',' + color3 + ')';
+        }
+        console.log(getRGB(0, 255));
+
+        //3. 模拟实现max()/min()
+        
+    </script>
+</body>
+
+</html>
